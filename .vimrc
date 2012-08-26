@@ -27,3 +27,5 @@ set undoreload=10000
 noremap H ^
 noremap L g_
 nnoremap <cr> :noh<CR><CR>:<backspace>
+noremap <C-n> :tabn<cr>
+noremap <C-p> :tabp<cr>
