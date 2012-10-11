@@ -10,6 +10,7 @@ set background=dark
 set hlsearch
 set incsearch
 set modeline
+set autoindent
 set smartindent
 set nocp
 set history=1000
@@ -23,6 +24,7 @@ colorscheme solarized
 
 set undofile
 set undoreload=10000
+set undodir=/Users/shabren/.vimundo/
 
 noremap H ^
 noremap L g_
