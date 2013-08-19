@@ -1,3 +1,10 @@
+filetype off
+set nocp
+execute pathogen#infect('~/config-files/.vim/bundle//{}')
+
+filetype plugin on
+
+let g:pydiction_location = '/Users/shabren/.vim/bundle/pydiction/complete_dict'
 syntax enable
 
 set tabstop=4
@@ -14,13 +21,16 @@ set autoindent
 set smartindent
 set nocp
 set history=1000
-set ofu=syntaxcomplete#Complete
 set t_Co=256
 
-filetype plugin on
 filetype indent plugin on
 
-colorscheme solarized
+set ofu=syntaxcomplete#Complete
+
+"colorscheme solarized
+"colorscheme Monokai
+colorscheme jellybeans
+
 
 set undofile
 set undoreload=10000
@@ -31,3 +41,8 @@ noremap L g_
 nnoremap <cr> :noh<CR><CR>:<backspace>
 noremap <C-n> :tabn<cr>
 noremap <C-p> :tabp<cr>
+
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
