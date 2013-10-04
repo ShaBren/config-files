@@ -1,5 +1,5 @@
 export PS1="\n\n\n\u@\h | \@ \d | \w\n>>> "
-export PATH=/usr/local/mysql/bin:$PATH:/usr/local/sbin
+export PATH=~/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH:/usr/local/sbin
 
 alias irc="ssh -p1239 shabren@fltt.us"
 alias lug="ssh -C shabren@short.csc.ncsu.edu"
