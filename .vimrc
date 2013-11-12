@@ -10,6 +10,10 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Shougo/unite.vim'
+Bundle 'scrooloose/nerdtree'
+"Bundle 'FredKSchott/CoVim'
+"Bundle 'Floobits'
+Bundle 'ardagnir/conque-term'
 
 filetype plugin on
 
@@ -39,11 +43,16 @@ set ofu=syntaxcomplete#Complete
 
 let g:jellybeans_use_lowcolor_black = 0
 
+" This is for floobits
+let g:ycm_allow_changing_updatetime = 0
+
+let CoVim_default_name = "ShaBren"
+let CoVim_default_port = "11337"  
+
 "colorscheme solarized
 "colorscheme Monokai
 "colorscheme jellybeans
 colorscheme vimbrant
-
 
 set undofile
 set undoreload=10000
@@ -58,6 +67,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+map <C-e> :NERDTreeToggle<CR>
 
 autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
