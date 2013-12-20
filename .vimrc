@@ -1,6 +1,6 @@
 filetype off
 set nocp
-execute pathogen#infect('~/config-files/.vim/bundle//{}')
+"execute pathogen#infect('~/config-files/.vim/bundle//{}')
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -74,3 +74,4 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
+command Rs %! astyle --indent=force-tab -j -k3 -W1 -w -Y -f -D -H -U -A1 -O
