@@ -85,5 +85,25 @@ User="\u"
  
 source ~/config-files/.git-prompt.sh
 
-export PS1="\n\n\n$Blue$User$IRed@$Cyan$Host $IRed|$Color_Off $Blue$Time24 $Date $IRed|$Color_Off $Green$Path $IRed\$(__git_ps1 \"|$Purple ($Blue%s$Purple)\")$Color_Off \n$Purple>>> $Color_Off"
+#export PS1="\n\n\n$Blue$User$IRed@$Cyan$Host $IRed|$Color_Off $Blue$Time24 $Date $IRed|$Color_Off $Green$Path $IRed\$(__git_ps1 \"|$Purple ($Blue%s$Purple)\")$Color_Off \n$Purple>>> $Color_Off"
+
+function _git_prompt() {
+    local git_status="`git status -unormal 2>&1`"
+    if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
+        if [[ "$git_status" =~ nothing\ to\ commit ]]; then
+            local GColor=$Green
+        elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
+            local GColor=$Yellow
+        else
+            local GColor=$IRed
+        fi  
+        echo -n "\$(__git_ps1 \"$GColor:%s\")"
+    fi
+}
+
+function _prompt_command() {
+  PS1="\n\n\n$Blue$User$IRed@$Cyan$Host $IRed|$Color_Off $Blue$Time24 $Date $IRed|$Color_Off $Green$Path`_git_prompt`$Color_Off \n$Purple>>> $Color_Off"
+}
+
+PROMPT_COMMAND=_prompt_command
 
