@@ -73,6 +73,7 @@ On_IWhite="\[\033[0;107m\]"   # White
 
 
 Time12h="\T"
+Time24="\t"
 Time12a="\@"
 Path="\w"
 PathFull="\W"
@@ -82,35 +83,7 @@ Date="\d"
 Host="\h"
 User="\u"
  
-source ~/.git-prompt.sh
+source ~/config-files/.git-prompt.sh
 
-function parse_git_dirty {
-  echo -n $(git status 2>/dev/null | awk -v out=$1 -v std="dirty" '{ if ($0=="# Changes to be committed:") std = "uncommited"; last=$0 } END{ if(last!="" && last!="nothing to commit (working directory clean)") { if(out!="") print out; else print std } }')
-}
-function parse_git_branch {
-  echo -n $(git branch --no-color 2>/dev/null | awk -v out=$1 '/^*/ { if(out=="") print $2; else print out}')
-}
-function parse_git_remote {
-  echo -n $(git status 2>/dev/null | awk -v out=$1 '/# Your branch is / { if(out=="") print $5; else print out }')
-}
-#export PS1='$(pwd \l)\u@\h:\[33[33m\]\w\[33[0m\]$(parse_git_branch ":")\[33[36m\]$(parse_git_branch)\[33[0m\]$(parse_git_remote "(")\[33[35m\]$(parse_git_remote)\[33[0m\]$(parse_git_remote ")")\[33[0m\]$(parse_git_dirty  "[")\[33[31m\]$(parse_git_dirty )\[33[0m\]$(parse_git_dirty  "]")>'
-
-export PS1="\n\n\n$Blue$User$IRed@$Cyan$Host $IRed|$Color_Off $Blue$Time12h $Date $IRed|$Color_Off $Green$Path $IRed|$Purple $(__git_ps1 "($Blue%s$Purple)")$Color_Off \n$Purple>>> $Color_Off"
-#Prefix="\n\n\n$User@$Host | $Time12h $Date | "
-#Suffix="$Path\n>>> "
-
-#export PS1=$Prefix'$(git branch &>/dev/null;\
-#if [ $? -eq 0 ]; then \
-  #echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
-  #if [ "$?" -eq "0" ]; then \
-    ## @4 - Clean repository - nothing to commit
-    #echo "'$Green'"$(__git_ps1 " (%s)"); \
-  #else \
-    ## @5 - Changes to working tree
-    #echo "'$IRed'"$(__git_ps1 " {%s}"); \
-  #fi) '$Suffix'"; \
-#else \
-  ## @2 - Prompt when not in GIT repo
-  #echo "'$Suffix$Color_Off'"; \
-#fi)'
+export PS1="\n\n\n$Blue$User$IRed@$Cyan$Host $IRed|$Color_Off $Blue$Time24 $Date $IRed|$Color_Off $Green$Path $IRed\$(__git_ps1 \"|$Purple ($Blue%s$Purple)\")$Color_Off \n$Purple>>> $Color_Off"
 
