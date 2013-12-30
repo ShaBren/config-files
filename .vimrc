@@ -14,6 +14,8 @@ Bundle 'scrooloose/nerdtree'
 "Bundle 'FredKSchott/CoVim'
 "Bundle 'Floobits'
 Bundle 'ardagnir/conque-term'
+Bundle 'bling/vim-airline'
+Bundle 'edkolev/promptline.vim'
 
 filetype plugin on
 
@@ -23,9 +25,8 @@ syntax enable
 set tabstop=4
 set number
 set laststatus=2 
-set statusline=%F%m%r%h%w\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L] 
+"set statusline=%F%m%r%h%w\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L] 
 set ignorecase 
-set paste 
 set background=dark
 set hlsearch
 set incsearch
@@ -48,6 +49,8 @@ let g:ycm_allow_changing_updatetime = 0
 
 let CoVim_default_name = "ShaBren"
 let CoVim_default_port = "11337"  
+
+let g:airline#extensions#tabline#enabled = 1
 
 "colorscheme solarized
 "colorscheme Monokai

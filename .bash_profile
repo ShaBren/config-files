@@ -28,3 +28,4 @@ alias muzak="ncmpcpp"
 export PYTHONSTARTUP=~/.pyrc.py
 export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH
 
+#source ~/.bash_prompt
