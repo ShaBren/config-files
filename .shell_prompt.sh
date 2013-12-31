@@ -102,7 +102,7 @@ function _git_prompt() {
 }
 
 function _prompt_command() {
-  PS1="\n\n\n$Blue$User$IRed@$Cyan$Host $IRed|$Color_Off $Blue$Time24 $Date $IRed|$Color_Off $Green$Path`_git_prompt`$Color_Off \n$Purple>>> $Color_Off"
+  PS1="\n\n\n$Blue$User$IRed@$Cyan$Host $IRed|$Color_Off $Blue$Time24 $Date $IRed|$Color_Off $Blue$Path`_git_prompt`$Color_Off \n$Purple>>> $Color_Off"
 }
 
 PROMPT_COMMAND=_prompt_command
