@@ -24,8 +24,10 @@ alias love="/Applications/love.app/Contents/MacOS/love"
 alias vim="vim --servername floobits"
 alias haste="HASTE_SERVER='http://drop1.shabren.com:7777' haste | pbcopy"
 alias muzak="ncmpcpp"
+alias parsedata="python3 ~/Development/intertalk-data-parser/parse.py"
+alias mounttpol="sshfs root@tpol.xvt.com:/var/www/pantel/installers ~/tpol-remote/"
 
 export PYTHONSTARTUP=~/.pyrc.py
-export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH
+#export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH
 
 source ~/config-files/.shell_prompt.sh

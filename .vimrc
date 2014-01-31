@@ -20,7 +20,6 @@ filetype plugin on
 let g:pydiction_location = '/Users/shabren/.vim/bundle/pydiction/complete_dict'
 syntax enable
 
-set tabstop=4
 set number
 set laststatus=2 
 "set statusline=%F%m%r%h%w\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L] 
@@ -41,12 +40,6 @@ filetype indent plugin on
 set ofu=syntaxcomplete#Complete
 
 let g:jellybeans_use_lowcolor_black = 0
-
-" This is for floobits
-let g:ycm_allow_changing_updatetime = 0
-
-let CoVim_default_name = "ShaBren"
-let CoVim_default_port = "11337"  
 
 let g:airline#extensions#tabline#enabled = 1
 
@@ -76,3 +69,6 @@ autocmd BufReadPost *
   \ endif
 
 command Rs %! astyle --indent=force-tab -j -k3 -W1 -w -Y -f -D -H -U -A1 -O
+
+set tabstop=4
+autocmd Filetype python setlocal noexpandtab tabstop=4 shiftwidth=4
