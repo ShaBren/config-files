@@ -49,8 +49,10 @@ $VERSION = "0.0";
 # All the works
 sub do_notifier {
   my ($server, $title, $data) = @_;
-    $data =~ s/["';]//g;
-    system("terminal-notifier -message '$data' -title '$title' >> /dev/null 2>&1");
+  #$data =~ s/["';]//g;
+	my @cargs = ( "terminal-notifier", "-message", $data, "-title", $title );
+	system(@cargs);
+	#system("terminal-notifier -message '$data' -title '$title' >> /dev/null 2>&1");
     return 1
 }
 
@@ -118,10 +120,7 @@ sub notifier_privmsg {
   # $host = host of the nick who sent the message
   my ($server, $data, $nick, $host) = @_;
     my ($target, $text) = split(/ :/, $data, 2);
-    # only notify if we're permitting notification on privmsg
-    if (Irssi::settings_get_str('notifier_on_privmsg') == 1) {
-        notifier_it($server, $nick, $data, $target, $nick); 
-    }
+    notifier_it($server, $nick, $data, $target, $nick); 
   Irssi::signal_continue($server, $data, $nick, $host);
 }
 

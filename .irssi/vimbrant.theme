@@ -250,7 +250,8 @@ abstracts = {
 
   # default background for all statusbars. You can also give
   # the default foreground color for statusbar items.
-  sb_background = "%4%w";
+  #sb_background = "%4%w";
+  sb_background = "%0%w";
 
   # default backround for "default" statusbar group
   #sb_default_bg = "%4";
@@ -288,27 +289,15 @@ abstracts = {
   # public message
   sb_act_msg = "%W$*";
   # hilight
-  sb_act_hilight = "%M$*";
+  sb_act_hilight = "%R$*";
   # hilight with specified color, $0 = color, $1 = text
   sb_act_hilight_color = "$0$1-%n";
-};
-formats = {
-  "fe-common/core" = {
-    own_msg = "{ownmsgnick $2 {ownnick $[-16]0}}$1";
-    own_msg_channel = "{ownmsgnick $3 {ownnick $[-16]0}{msgchannel $1}}$2";
-    own_msg_private_query = "{ownprivmsgnick {ownprivnick $[-16]2}}$1";
-    pubmsg_me = "{pubmsgmenick $2 {menick $[-16]0}}$1";
-    pubmsg_me_channel = "{pubmsgmenick $3 {menick $[-16]0}{msgchannel $1}}$2";
-    pubmsg_hilight = "{pubmsghinick $0 $3 $[-16]1%n}$2";
-    pubmsg_hilight_channel = "{pubmsghinick $0 $4 $[-16]1{msgchannel $2}}$3";
-    pubmsg = "{pubmsgnick $2 {pubnick %w$0}}$1";
-    pubmsg_channel = "{pubmsgnick $2 {pubnick %w$0}}$1";
-    msg_private_query = "{privmsgnick $[-16]0}$2";
+  "Irssi::Script::adv_windowlist" = {
+    awl_display_nokey = "= [$N]$H$C$S ";
+    awl_display_key = "%N%K$Q| $H$C$S ";
+    awl_display_key_active = "%N%r$Q%K| $H$C$S ";
+    awl_display_header = "%N$C";
+    awl_viewer_item_bg = "%N";
   };
-  "fe-common/irc" = {
-    own_action = "{ownaction $[-14]0} $1";
-    action_private = "{pvtaction $[-14]0}$1";
-    action_private_query = "{pvtaction_query $[-14]0} $2";
-    action_public = "{pubaction $[-14]0}$1";
-  };
+
 };

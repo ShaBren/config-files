@@ -14,6 +14,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'ardagnir/conque-term'
 Bundle 'bling/vim-airline'
 Bundle 'edkolev/promptline.vim'
+Bundle 'tpope/vim-eunuch'
+Bundle 'vim-scripts/vimwiki'
 
 filetype plugin on
 
@@ -34,6 +36,17 @@ set nocp
 set history=1000
 set t_Co=256
 set shiftwidth=4
+set showcmd
+set showmatch
+set ttyfast
+set lazyredraw
+set scrolloff=5
+set sidescrolloff=5
+set autochdir
+set splitbelow
+set splitright
+set hidden
+set backspace=2
 
 filetype indent plugin on
 
@@ -42,6 +55,12 @@ set ofu=syntaxcomplete#Complete
 let g:jellybeans_use_lowcolor_black = 0
 
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+let g:plantuml_executable_script = "puml"
+
+let mapleader = " "
 
 "colorscheme solarized
 "colorscheme Monokai
@@ -55,13 +74,16 @@ set undodir=/Users/shabren/.vimundo/
 noremap H ^
 noremap L g_
 nnoremap <cr> :noh<CR><CR>:<backspace>
-noremap <C-n> :tabn<cr>
-noremap <C-p> :tabp<cr>
+noremap <leader>l :bn<cr>
+noremap <leader>h :bp<cr>
+"noremap <C-p> :bp<cr>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 map <C-e> :NERDTreeToggle<CR>
+
+au BufRead *.txt setlocal spell
 
 autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |

@@ -13,19 +13,19 @@ alias runserv="python manage.py runserver"
 alias mc="ssh -p1239 shabren@mc.shabren.com"
 alias proxywork="ssh root@git.xvt.com -ND "
 alias sbnet="ssh u40765419@stephenbryant.net"
-alias ils1="ssh root@10.18.0.117"
-alias ils2="ssh root@10.18.0.133"
-alias cnils="ssh root@10.18.0.121"
-alias mohils="ssh root@10.18.0.110"
-alias tpol="ssh root@10.18.0.15"
+alias tpol="ssh -XY root@tpol.xvt.com"
 alias drop1="ssh root@drop1.shabren.com"
 alias technic="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/java -jar ~/Downloads/TechnicLauncher.jar"
 alias love="/Applications/love.app/Contents/MacOS/love"
-alias vim="vim --servername floobits"
+#alias vim="nvim"
 alias haste="HASTE_SERVER='http://drop1.shabren.com:7777' haste | pbcopy"
 alias muzak="ncmpcpp"
 alias parsedata="python3 ~/Development/intertalk-data-parser/parse.py"
 alias mounttpol="sshfs root@tpol.xvt.com:/var/www/pantel/installers ~/tpol-remote/"
+#git filter-branch --prune-empty -d /tmp/gitscratch --index-filter "git rm --cached -f --ignore-unmatch oops.iso" --tag-name-filter cat -- --all
+
+alias tta='echo "In  :" `date +"%H:%M:%S"` >> ~/Dropbox/timelogs/`date +"%Y-%m-%d"`'
+alias ttd='echo "Out :" `date +"%H:%M:%S"` >> ~/Dropbox/timelogs/`date +"%Y-%m-%d"`'
 
 export PYTHONSTARTUP=~/.pyrc.py
 #export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH
