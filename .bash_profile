@@ -1,5 +1,7 @@
 export PS1="\n\n\n\u@\h | \@ \d | \w\n>>> "
 export PATH=~/bin:/usr/local/bin:/usr/local/mysql/bin:$PATH:/usr/local/sbin
+export EDITOR=vim
+export VISUAL=vim
 
 alias irc="ssh -p1239 shabren@fltt.us"
 alias lug="ssh -C shabren@short.csc.ncsu.edu"
@@ -27,7 +29,10 @@ alias mounttpol="sshfs root@tpol.xvt.com:/var/www/pantel/installers ~/tpol-remot
 alias tta='echo "In  :" `date +"%H:%M:%S"` >> ~/Dropbox/timelogs/`date +"%Y-%m-%d"`'
 alias ttd='echo "Out :" `date +"%H:%M:%S"` >> ~/Dropbox/timelogs/`date +"%Y-%m-%d"`'
 
+alias tunnel1='ssh -N -L 5901:localhost:5901 root@tpol.xvt.com'
+
 export PYTHONSTARTUP=~/.pyrc.py
 #export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH
 
 source ~/config-files/.shell_prompt.sh
+source ~/config-files/git-completion.sh

@@ -5,17 +5,18 @@ set nocp
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Shougo/unite.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'ardagnir/conque-term'
-Bundle 'bling/vim-airline'
-Bundle 'edkolev/promptline.vim'
-Bundle 'tpope/vim-eunuch'
-Bundle 'vim-scripts/vimwiki'
+Plugin 'gmarik/vundle'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Shougo/unite.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ardagnir/conque-term'
+Plugin 'bling/vim-airline'
+Plugin 'edkolev/promptline.vim'
+Plugin 'tpope/vim-eunuch'
+Plugin 'vim-scripts/vimwiki'
+Plugin 'flazz/vim-colorschemes'
 
 filetype plugin on
 
@@ -59,6 +60,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 let g:plantuml_executable_script = "puml"
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 let mapleader = " "
 
